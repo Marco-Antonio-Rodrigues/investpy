@@ -3,7 +3,7 @@
 
 import pytest
 
-import investpy
+import pynvesting
 
 
 def test_investpy():
@@ -11,8 +11,8 @@ def test_investpy():
     This function checks that both the investpy's author and version are the correct ones.
     """
 
-    print(investpy.__author__)
-    print(investpy.__version__)
+    print(pynvesting.__author__)
+    print(pynvesting.__version__)
 
 
 def test_investpy_stocks():
@@ -30,8 +30,8 @@ def test_investpy_stocks():
     ]
 
     for param in params:
-        investpy.get_stocks(country=param['country'])
-        investpy.get_stocks_list(country=param['country'])
+        pynvesting.get_stocks(country=param['country'])
+        pynvesting.get_stocks_list(country=param['country'])
 
     params = [
         {
@@ -62,11 +62,11 @@ def test_investpy_stocks():
     ]
 
     for param in params:
-        investpy.get_stocks_dict(country=param['country'],
+        pynvesting.get_stocks_dict(country=param['country'],
                                  columns=param['columns'],
                                  as_json=param['as_json'])
 
-    investpy.get_stock_countries()
+    pynvesting.get_stock_countries()
 
     params = [
         {
@@ -88,13 +88,13 @@ def test_investpy_stocks():
     ]
 
     for param in params:
-        investpy.get_stock_recent_data(stock='BBVA',
+        pynvesting.get_stock_recent_data(stock='BBVA',
                                        country='spain',
                                        as_json=param['as_json'],
                                        order=param['order'],
                                        interval='Daily')
 
-        investpy.get_stock_historical_data(stock='BBVA',
+        pynvesting.get_stock_historical_data(stock='BBVA',
                                            country='spain',
                                            from_date='01/01/1990',
                                            to_date='01/01/2019',
@@ -103,7 +103,7 @@ def test_investpy_stocks():
                                            interval='Daily')
 
     for value in ['spanish', 'english']:
-        investpy.get_stock_company_profile(stock='BBVA',
+        pynvesting.get_stock_company_profile(stock='BBVA',
                                            country='spain',
                                            language=value)
 
@@ -126,7 +126,7 @@ def test_investpy_stocks():
     ]
 
     for param in params:
-        investpy.get_stock_information(stock=param['stock'], country=param['country'], as_json=param['as_json'])
+        pynvesting.get_stock_information(stock=param['stock'], country=param['country'], as_json=param['as_json'])
 
     params = [
         {
@@ -167,7 +167,7 @@ def test_investpy_stocks():
     ]
 
     for param in params:
-        investpy.get_stocks_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
+        pynvesting.get_stocks_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
 
     params = [
         {
@@ -181,7 +181,7 @@ def test_investpy_stocks():
     ]
 
     for param in params:
-        investpy.get_stock_dividends(stock=param['stock'], country=param['country'])
+        pynvesting.get_stock_dividends(stock=param['stock'], country=param['country'])
 
     params = [
         {
@@ -205,12 +205,12 @@ def test_investpy_stocks():
     ]
 
     for param in params:
-        investpy.get_stock_financial_summary(stock=param['stock'],
+        pynvesting.get_stock_financial_summary(stock=param['stock'],
                                              country=param['country'], 
                                              summary_type=param['summary_type'],
                                              period=param['period'])
 
-    investpy.search_stocks(by='name', value='BBVA')
+    pynvesting.search_stocks(by='name', value='BBVA')
 
 
 def test_investpy_funds():
@@ -228,8 +228,8 @@ def test_investpy_funds():
     ]
 
     for param in params:
-        investpy.get_funds(country=param['country'])
-        investpy.get_funds_list(country=param['country'])
+        pynvesting.get_funds(country=param['country'])
+        pynvesting.get_funds_list(country=param['country'])
 
     params = [
         {
@@ -260,11 +260,11 @@ def test_investpy_funds():
     ]
 
     for param in params:
-        investpy.get_funds_dict(country=param['country'],
+        pynvesting.get_funds_dict(country=param['country'],
                                 columns=param['columns'],
                                 as_json=param['as_json'])
 
-    investpy.get_fund_countries()
+    pynvesting.get_fund_countries()
 
     params = [
         {
@@ -286,13 +286,13 @@ def test_investpy_funds():
     ]
 
     for param in params:
-        investpy.get_fund_recent_data(fund='bbva multiactivo conservador pp',
+        pynvesting.get_fund_recent_data(fund='bbva multiactivo conservador pp',
                                       country='spain',
                                       as_json=param['as_json'],
                                       order=param['order'],
                                       interval='Daily')
 
-        investpy.get_fund_historical_data(fund='bbva multiactivo conservador pp',
+        pynvesting.get_fund_historical_data(fund='bbva multiactivo conservador pp',
                                           country='spain',
                                           from_date='01/01/2010',
                                           to_date='01/01/2019',
@@ -314,7 +314,7 @@ def test_investpy_funds():
     ]
 
     for param in params:
-        investpy.get_fund_information(fund=param['fund'],
+        pynvesting.get_fund_information(fund=param['fund'],
                                       country=param['country'],
                                       as_json=param['as_json'])
 
@@ -342,9 +342,9 @@ def test_investpy_funds():
     ]
 
     for param in params:
-        investpy.get_funds_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
+        pynvesting.get_funds_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
 
-    investpy.search_funds(by='name', value='bbva')
+    pynvesting.search_funds(by='name', value='bbva')
 
 
 def test_investpy_etfs():
@@ -362,8 +362,8 @@ def test_investpy_etfs():
     ]
 
     for param in params:
-        investpy.get_etfs(country=param['country'])
-        investpy.get_etfs_list(country=param['country'])
+        pynvesting.get_etfs(country=param['country'])
+        pynvesting.get_etfs_list(country=param['country'])
 
     params = [
         {
@@ -394,11 +394,11 @@ def test_investpy_etfs():
     ]
 
     for param in params:
-        investpy.get_etfs_dict(country=param['country'],
+        pynvesting.get_etfs_dict(country=param['country'],
                                columns=param['columns'],
                                as_json=param['as_json'])
 
-    investpy.get_etf_countries()
+    pynvesting.get_etf_countries()
 
     params = [
         {
@@ -420,13 +420,13 @@ def test_investpy_etfs():
     ]
 
     for param in params:
-        investpy.get_etf_recent_data(etf='bbva accion dj eurostoxx 50',
+        pynvesting.get_etf_recent_data(etf='bbva accion dj eurostoxx 50',
                                      country='spain',
                                      as_json=param['as_json'],
                                      order=param['order'],
                                      interval='Daily')
 
-        investpy.get_etf_historical_data(etf='bbva accion dj eurostoxx 50',
+        pynvesting.get_etf_historical_data(etf='bbva accion dj eurostoxx 50',
                                          country='spain',
                                          from_date='01/01/2010',
                                          to_date='01/01/2019',
@@ -448,7 +448,7 @@ def test_investpy_etfs():
     ]
 
     for param in params:
-        investpy.get_etf_information(etf=param['etf'], country=param['country'], as_json=param['as_json'])
+        pynvesting.get_etf_information(etf=param['etf'], country=param['country'], as_json=param['as_json'])
 
     params = [
         {
@@ -464,9 +464,9 @@ def test_investpy_etfs():
     ]
 
     for param in params:
-        investpy.get_etfs_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
+        pynvesting.get_etfs_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
 
-    investpy.search_etfs(by='name', value='bbva')
+    pynvesting.search_etfs(by='name', value='bbva')
 
 
 def test_investpy_indices():
@@ -484,8 +484,8 @@ def test_investpy_indices():
     ]
 
     for param in params:
-        investpy.get_indices(country=param['country'])
-        investpy.get_indices_list(country=param['country'])
+        pynvesting.get_indices(country=param['country'])
+        pynvesting.get_indices_list(country=param['country'])
 
     params = [
         {
@@ -516,11 +516,11 @@ def test_investpy_indices():
     ]
 
     for param in params:
-        investpy.get_indices_dict(country=param['country'],
+        pynvesting.get_indices_dict(country=param['country'],
                                   columns=param['columns'],
                                   as_json=param['as_json'])
 
-    investpy.get_index_countries()
+    pynvesting.get_index_countries()
 
     params = [
         {
@@ -542,13 +542,13 @@ def test_investpy_indices():
     ]
 
     for param in params:
-        investpy.get_index_recent_data(index='ibex 35',
+        pynvesting.get_index_recent_data(index='ibex 35',
                                        country='spain',
                                        as_json=param['as_json'],
                                        order=param['order'],
                                        interval='Daily')
 
-        investpy.get_index_historical_data(index='ibex 35',
+        pynvesting.get_index_historical_data(index='ibex 35',
                                            country='spain',
                                            from_date='01/01/2018',
                                            to_date='01/01/2019',
@@ -570,7 +570,7 @@ def test_investpy_indices():
     ]
 
     for param in params:
-        investpy.get_index_information(index=param['index'], country=param['country'], as_json=param['as_json'])
+        pynvesting.get_index_information(index=param['index'], country=param['country'], as_json=param['as_json'])
     
     params = [
         {
@@ -586,9 +586,9 @@ def test_investpy_indices():
     ]
 
     for param in params:
-        investpy.get_indices_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
+        pynvesting.get_indices_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
 
-    investpy.search_indices(by='name', value='ibex')
+    pynvesting.search_indices(by='name', value='ibex')
 
 
 def test_investpy_currency_crosses():
@@ -616,8 +616,8 @@ def test_investpy_currency_crosses():
     ]
 
     for param in params:
-        investpy.get_currency_crosses(base=param['base'], second=param['second'])
-        investpy.get_currency_crosses_list(base=param['base'], second=param['second'])
+        pynvesting.get_currency_crosses(base=param['base'], second=param['second'])
+        pynvesting.get_currency_crosses_list(base=param['base'], second=param['second'])
 
     params = [
         {
@@ -677,12 +677,12 @@ def test_investpy_currency_crosses():
     ]
 
     for param in params:
-        investpy.get_currency_crosses_dict(base=param['base'],
+        pynvesting.get_currency_crosses_dict(base=param['base'],
                                            second=param['second'],
                                            columns=param['columns'],
                                            as_json=param['as_json'])
 
-    investpy.get_available_currencies()
+    pynvesting.get_available_currencies()
 
     params = [
         {
@@ -716,12 +716,12 @@ def test_investpy_currency_crosses():
     ]
 
     for param in params:
-        investpy.get_currency_cross_recent_data(currency_cross=param['currency_cross'],
+        pynvesting.get_currency_cross_recent_data(currency_cross=param['currency_cross'],
                                                 as_json=param['as_json'],
                                                 order=param['order'],
                                                 interval='Daily')
 
-        investpy.get_currency_cross_historical_data(currency_cross=param['currency_cross'],
+        pynvesting.get_currency_cross_historical_data(currency_cross=param['currency_cross'],
                                                     from_date=param['from_date'],
                                                     to_date=param['to_date'],
                                                     as_json=param['as_json'],
@@ -748,7 +748,7 @@ def test_investpy_currency_crosses():
     ]
 
     for param in params:
-        investpy.get_currency_cross_information(currency_cross=param['currency_cross'], as_json=param['as_json'])
+        pynvesting.get_currency_cross_information(currency_cross=param['currency_cross'], as_json=param['as_json'])
     
     params = [
         {
@@ -764,9 +764,9 @@ def test_investpy_currency_crosses():
     ]
     
     for param in params:
-        investpy.get_currency_crosses_overview(currency=param['currency'], as_json=param['as_json'], n_results=param['n_results'])
+        pynvesting.get_currency_crosses_overview(currency=param['currency'], as_json=param['as_json'], n_results=param['n_results'])
 
-    investpy.search_currency_crosses(by='base', value='EUR')
+    pynvesting.search_currency_crosses(by='base', value='EUR')
 
 
 def test_investpy_bonds():
@@ -784,8 +784,8 @@ def test_investpy_bonds():
     ]
 
     for param in params:
-        investpy.get_bonds(country=param['country'])
-        investpy.get_bonds_list(country=param['country'])
+        pynvesting.get_bonds(country=param['country'])
+        pynvesting.get_bonds_list(country=param['country'])
 
     params = [
         {
@@ -816,11 +816,11 @@ def test_investpy_bonds():
     ]
 
     for param in params:
-        investpy.get_bonds_dict(country=param['country'],
+        pynvesting.get_bonds_dict(country=param['country'],
                                 columns=param['columns'],
                                 as_json=param['as_json'])
 
-    investpy.get_bond_countries()
+    pynvesting.get_bond_countries()
 
     params = [
         {
@@ -842,12 +842,12 @@ def test_investpy_bonds():
     ]
 
     for param in params:
-        investpy.get_bond_recent_data(bond='Spain 30Y',
+        pynvesting.get_bond_recent_data(bond='Spain 30Y',
                                       as_json=param['as_json'],
                                       order=param['order'],
                                       interval='Daily')
 
-        investpy.get_bond_historical_data(bond='Spain 30Y',
+        pynvesting.get_bond_historical_data(bond='Spain 30Y',
                                           from_date='01/01/1990',
                                           to_date='01/01/2019',
                                           as_json=param['as_json'],
@@ -870,7 +870,7 @@ def test_investpy_bonds():
     ]
 
     for param in params:
-        investpy.get_bond_information(bond=param['bond'], as_json=param['as_json'])
+        pynvesting.get_bond_information(bond=param['bond'], as_json=param['as_json'])
     
     params = [
         {
@@ -884,9 +884,9 @@ def test_investpy_bonds():
     ]
 
     for param in params:
-        investpy.get_bonds_overview(country=param['country'], as_json=param['as_json'])
+        pynvesting.get_bonds_overview(country=param['country'], as_json=param['as_json'])
 
-    investpy.search_bonds(by='name', value='Spain')
+    pynvesting.search_bonds(by='name', value='Spain')
 
 
 def test_investpy_commodities():
@@ -904,8 +904,8 @@ def test_investpy_commodities():
     ]
 
     for param in params:
-        investpy.get_commodities(group=param['group'])
-        investpy.get_commodities_list(group=param['group'])
+        pynvesting.get_commodities(group=param['group'])
+        pynvesting.get_commodities_list(group=param['group'])
 
     params = [
         {
@@ -936,11 +936,11 @@ def test_investpy_commodities():
     ]
 
     for param in params:
-        investpy.get_commodities_dict(group=param['group'],
+        pynvesting.get_commodities_dict(group=param['group'],
                                       columns=param['columns'],
                                       as_json=param['as_json'])
 
-    investpy.get_commodity_groups()
+    pynvesting.get_commodity_groups()
 
     params = [
         {
@@ -966,13 +966,13 @@ def test_investpy_commodities():
     ]
 
     for param in params:
-        investpy.get_commodity_recent_data(commodity='copper',
+        pynvesting.get_commodity_recent_data(commodity='copper',
                                            country=param['country'],
                                            as_json=param['as_json'],
                                            order=param['order'],
                                            interval='Daily')
 
-        investpy.get_commodity_historical_data(commodity='copper',
+        pynvesting.get_commodity_historical_data(commodity='copper',
                                                from_date='01/01/1990',
                                                to_date='01/01/2019',
                                                country=param['country'],
@@ -994,7 +994,7 @@ def test_investpy_commodities():
     ]
 
     for param in params:
-        investpy.get_commodity_information(commodity=param['commodity'], country=param['country'], as_json=param['as_json'])
+        pynvesting.get_commodity_information(commodity=param['commodity'], country=param['country'], as_json=param['as_json'])
     
     params = [
         {
@@ -1010,9 +1010,9 @@ def test_investpy_commodities():
     ]
 
     for param in params:
-        investpy.get_commodities_overview(group=param['group'], as_json=param['as_json'], n_results=param['n_results'])
+        pynvesting.get_commodities_overview(group=param['group'], as_json=param['as_json'], n_results=param['n_results'])
 
-    investpy.search_commodities(by='name', value='gold')
+    pynvesting.search_commodities(by='name', value='gold')
 
 
 def test_investpy_cryptos():
@@ -1020,8 +1020,8 @@ def test_investpy_cryptos():
     This function checks that crypto currencies data retrieval functions listed in investpy work properly.
     """
     
-    investpy.get_cryptos()
-    investpy.get_cryptos_list()
+    pynvesting.get_cryptos()
+    pynvesting.get_cryptos_list()
 
     params = [
         {
@@ -1039,7 +1039,7 @@ def test_investpy_cryptos():
     ]
 
     for param in params:
-        investpy.get_cryptos_dict(columns=param['columns'],
+        pynvesting.get_cryptos_dict(columns=param['columns'],
                                   as_json=param['as_json'])
 
     params = [
@@ -1062,12 +1062,12 @@ def test_investpy_cryptos():
     ]
 
     for param in params:
-        investpy.get_crypto_recent_data(crypto='bitcoin',
+        pynvesting.get_crypto_recent_data(crypto='bitcoin',
                                         as_json=param['as_json'],
                                         order=param['order'],
                                         interval='Daily')
 
-        investpy.get_crypto_historical_data(crypto='bitcoin',
+        pynvesting.get_crypto_historical_data(crypto='bitcoin',
                                             from_date='01/01/1990',
                                             to_date='01/01/2019',
                                             as_json=param['as_json'],
@@ -1086,7 +1086,7 @@ def test_investpy_cryptos():
     ]
 
     for param in params:
-        investpy.get_crypto_information(crypto=param['crypto'], as_json=param['as_json'])
+        pynvesting.get_crypto_information(crypto=param['crypto'], as_json=param['as_json'])
     
     params = [
         {
@@ -1116,9 +1116,9 @@ def test_investpy_cryptos():
     ]
 
     for param in params:
-        investpy.get_cryptos_overview(as_json=param['as_json'], n_results=param['n_results'])
+        pynvesting.get_cryptos_overview(as_json=param['as_json'], n_results=param['n_results'])
 
-    investpy.search_cryptos(by='name', value='bitcoin')
+    pynvesting.search_cryptos(by='name', value='bitcoin')
 
 
 def test_investpy_certificates():
@@ -1136,8 +1136,8 @@ def test_investpy_certificates():
     ]
 
     for param in params:
-        investpy.get_certificates(country=param['country'])
-        investpy.get_certificates_list(country=param['country'])
+        pynvesting.get_certificates(country=param['country'])
+        pynvesting.get_certificates_list(country=param['country'])
 
     params = [
         {
@@ -1168,11 +1168,11 @@ def test_investpy_certificates():
     ]
 
     for param in params:
-        investpy.get_certificates_dict(country=param['country'],
+        pynvesting.get_certificates_dict(country=param['country'],
                                        columns=param['columns'],
                                        as_json=param['as_json'])
 
-    investpy.get_certificate_countries()
+    pynvesting.get_certificate_countries()
 
     params = [
         {
@@ -1194,13 +1194,13 @@ def test_investpy_certificates():
     ]
 
     for param in params:
-        investpy.get_certificate_recent_data(certificate='BNP Gold 31Dec99',
+        pynvesting.get_certificate_recent_data(certificate='BNP Gold 31Dec99',
                                              country='france',
                                              as_json=param['as_json'],
                                              order=param['order'],
                                              interval='Daily')
 
-        investpy.get_certificate_historical_data(certificate='BNP Gold 31Dec99',
+        pynvesting.get_certificate_historical_data(certificate='BNP Gold 31Dec99',
                                                  country='france',
                                                  from_date='01/01/1990',
                                                  to_date='01/01/2019',
@@ -1222,7 +1222,7 @@ def test_investpy_certificates():
     ]
 
     for param in params:
-        investpy.get_certificate_information(certificate=param['certificate'],
+        pynvesting.get_certificate_information(certificate=param['certificate'],
                                              country=param['country'],
                                              as_json=param['as_json'])
     
@@ -1240,11 +1240,11 @@ def test_investpy_certificates():
     ]
 
     for param in params:
-        investpy.get_certificates_overview(country=param['country'],
+        pynvesting.get_certificates_overview(country=param['country'],
                                            as_json=param['as_json'],
                                            n_results=param['n_results'])
 
-    investpy.search_certificates(by='name', value='BNP')
+    pynvesting.search_certificates(by='name', value='BNP')
 
 
 def test_investpy_search():
@@ -1292,7 +1292,7 @@ def test_investpy_search():
     ]
 
     for param in params:
-        results = investpy.search_quotes(text=param['text'],
+        results = pynvesting.search_quotes(text=param['text'],
                                          products=param['products'],
                                          countries=param['countries'],
                                          n_results=param['n_results'])
@@ -1329,7 +1329,7 @@ def test_investpy_search():
     ]
 
     for product_type, product_name in financial_products:
-        search_result = investpy.search_quotes(text=product_name, products=[product_type], n_results=1)
+        search_result = pynvesting.search_quotes(text=product_name, products=[product_type], n_results=1)
 
         assert search_result.retrieve_information() is not None
 
@@ -1361,7 +1361,7 @@ def test_investpy_news():
     ]
 
     for param in params:
-        investpy.economic_calendar(time_zone=param['time_zone'],
+        pynvesting.economic_calendar(time_zone=param['time_zone'],
                                    time_filter=param['time_filter'],
                                    countries=param['countries'],
                                    importances=param['importances'],
@@ -1377,7 +1377,7 @@ def test_investpy_technical():
 
     params = list()
 
-    for interval in list(investpy.utils.constant.INTERVAL_FILTERS.keys()):
+    for interval in list(pynvesting.utils.constant.INTERVAL_FILTERS.keys()):
         params.append({
             'name': 'bbva',
             'country': 'spain',
@@ -1386,17 +1386,17 @@ def test_investpy_technical():
         })
 
     for param in params:
-        investpy.technical_indicators(name=param['name'],
+        pynvesting.technical_indicators(name=param['name'],
                                       country=param['country'],
                                       product_type=param['product_type'],
                                       interval=param['interval'])
 
-        investpy.moving_averages(name=param['name'],
+        pynvesting.moving_averages(name=param['name'],
                                  country=param['country'],
                                  product_type=param['product_type'],
                                  interval=param['interval'])
 
-        investpy.pivot_points(name=param['name'],
+        pynvesting.pivot_points(name=param['name'],
                               country=param['country'],
                               product_type=param['product_type'],
                               interval=param['interval'])

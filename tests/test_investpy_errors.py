@@ -3,7 +3,7 @@
 
 import pytest
 
-import investpy
+import pynvesting
 
 
 def test_stocks_errors():
@@ -22,12 +22,12 @@ def test_stocks_errors():
 
     for param in params:
         try:
-            investpy.get_stocks(country=param['country'])
+            pynvesting.get_stocks(country=param['country'])
         except:
             pass
 
         try:
-            investpy.get_stocks_list(country=param['country'])
+            pynvesting.get_stocks_list(country=param['country'])
         except:
             pass
 
@@ -56,7 +56,7 @@ def test_stocks_errors():
 
     for param in params:
         try:
-            investpy.get_stocks_dict(country=param['country'],
+            pynvesting.get_stocks_dict(country=param['country'],
                                      columns=param['columns'],
                                      as_json=param['as_json'])
         except:
@@ -158,7 +158,7 @@ def test_stocks_errors():
 
     for param in params:
         try:
-            investpy.get_stock_recent_data(stock=param['stock'],
+            pynvesting.get_stock_recent_data(stock=param['stock'],
                                            country=param['country'],
                                            as_json=param['as_json'],
                                            order=param['order'],
@@ -342,7 +342,7 @@ def test_stocks_errors():
 
     for param in params:
         try:
-            investpy.get_stock_historical_data(stock=param['stock'],
+            pynvesting.get_stock_historical_data(stock=param['stock'],
                                                country=param['country'],
                                                from_date=param['from_date'],
                                                to_date=param['to_date'],
@@ -402,7 +402,7 @@ def test_stocks_errors():
 
     for param in params:
         try:
-            investpy.get_stock_company_profile(stock=param['stock'],
+            pynvesting.get_stock_company_profile(stock=param['stock'],
                                                country=param['country'],
                                                language=param['language'])
         except:
@@ -441,7 +441,7 @@ def test_stocks_errors():
 
     for param in params:
         try:
-            investpy.get_stock_dividends(stock=param['stock'], country=param['country'])
+            pynvesting.get_stock_dividends(stock=param['stock'], country=param['country'])
         except:
             pass
 
@@ -480,7 +480,7 @@ def test_stocks_errors():
 
     for param in params:
         try:
-            investpy.get_stock_information(stock=param['stock'], country=param['country'], as_json=param['as_json'])
+            pynvesting.get_stock_information(stock=param['stock'], country=param['country'], as_json=param['as_json'])
         except:
             pass
 
@@ -524,7 +524,7 @@ def test_stocks_errors():
 
     for param in params:
         try:
-            investpy.get_stocks_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
+            pynvesting.get_stocks_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
         except:
             pass
 
@@ -605,7 +605,7 @@ def test_stocks_errors():
 
     for param in params:
         try:
-            investpy.get_stock_financial_summary(stock=param['stock'],
+            pynvesting.get_stock_financial_summary(stock=param['stock'],
                                                  country=param['country'], 
                                                  summary_type=param['summary_type'],
                                                  period=param['period'])
@@ -641,7 +641,7 @@ def test_stocks_errors():
 
     for param in params:
         try:
-            investpy.search_stocks(by=param['by'], value=param['value'])
+            pynvesting.search_stocks(by=param['by'], value=param['value'])
         except:
             pass
 
@@ -659,12 +659,12 @@ def test_funds_errors():
 
     for param in params:
         try:
-            investpy.get_funds(country=param['country'])
+            pynvesting.get_funds(country=param['country'])
         except:
             pass
 
         try:
-            investpy.get_funds_list(country=param['country'])
+            pynvesting.get_funds_list(country=param['country'])
         except:
             pass
 
@@ -693,7 +693,7 @@ def test_funds_errors():
 
     for param in params:
         try:
-            investpy.get_funds_dict(country=param['country'],
+            pynvesting.get_funds_dict(country=param['country'],
                                     columns=param['columns'],
                                     as_json=param['as_json'])
         except:
@@ -788,7 +788,7 @@ def test_funds_errors():
 
     for param in params:
         try:
-            investpy.get_fund_recent_data(fund=param['fund'],
+            pynvesting.get_fund_recent_data(fund=param['fund'],
                                           country=param['country'],
                                           as_json=param['as_json'],
                                           order=param['order'],
@@ -963,7 +963,7 @@ def test_funds_errors():
 
     for param in params:
         try:
-            investpy.get_fund_historical_data(fund=param['fund'],
+            pynvesting.get_fund_historical_data(fund=param['fund'],
                                               country=param['country'],
                                               from_date=param['from_date'],
                                               to_date=param['to_date'],
@@ -1018,7 +1018,7 @@ def test_funds_errors():
 
     for param in params:
         try:
-            investpy.get_fund_information(fund=param['fund'],
+            pynvesting.get_fund_information(fund=param['fund'],
                                           country=param['country'],
                                           as_json=param['as_json'])
         except:
@@ -1064,7 +1064,7 @@ def test_funds_errors():
 
     for param in params:
         try:
-            investpy.get_funds_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
+            pynvesting.get_funds_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
         except:
             pass
 
@@ -1098,7 +1098,7 @@ def test_funds_errors():
 
     for param in params:
         try:
-            investpy.search_funds(by=param['by'], value=param['value'])
+            pynvesting.search_funds(by=param['by'], value=param['value'])
         except:
             pass
     
@@ -1119,12 +1119,12 @@ def test_etfs_errors():
 
     for param in params:
         try:
-            investpy.get_etfs(country=param['country'])
+            pynvesting.get_etfs(country=param['country'])
         except:
             pass
 
         try:
-            investpy.get_etfs_list(country=param['country'])
+            pynvesting.get_etfs_list(country=param['country'])
         except:
             pass
 
@@ -1153,7 +1153,7 @@ def test_etfs_errors():
 
     for param in params:
         try:
-            investpy.get_etfs_dict(country=param['country'],
+            pynvesting.get_etfs_dict(country=param['country'],
                                    columns=param['columns'],
                                    as_json=param['as_json'])
         except:
@@ -1255,7 +1255,7 @@ def test_etfs_errors():
 
     for param in params:
         try:
-            investpy.get_etf_recent_data(etf=param['etf'],
+            pynvesting.get_etf_recent_data(etf=param['etf'],
                                          country=param['country'],
                                          as_json=param['as_json'],
                                          order=param['order'],
@@ -1421,7 +1421,7 @@ def test_etfs_errors():
 
     for param in params:
         try:
-            investpy.get_etf_historical_data(etf=param['etf'],
+            pynvesting.get_etf_historical_data(etf=param['etf'],
                                              country=param['country'],
                                              from_date=param['from_date'],
                                              to_date=param['to_date'],
@@ -1466,7 +1466,7 @@ def test_etfs_errors():
 
     for param in params:
         try:
-            investpy.get_etf_information(etf=param['etf'], country=param['country'], as_json=param['as_json'])
+            pynvesting.get_etf_information(etf=param['etf'], country=param['country'], as_json=param['as_json'])
         except:
             pass
 
@@ -1510,7 +1510,7 @@ def test_etfs_errors():
 
     for param in params:
         try:
-            investpy.get_etfs_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
+            pynvesting.get_etfs_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
         except:
             pass
 
@@ -1543,7 +1543,7 @@ def test_etfs_errors():
 
     for param in params:
         try:
-            investpy.search_etfs(by=param['by'], value=param['value'])
+            pynvesting.search_etfs(by=param['by'], value=param['value'])
         except:
             pass
 
@@ -1564,12 +1564,12 @@ def test_indices_errors():
 
     for param in params:
         try:
-            investpy.get_indices(country=param['country'])
+            pynvesting.get_indices(country=param['country'])
         except:
             pass
 
         try:
-            investpy.get_indices_list(country=param['country'])
+            pynvesting.get_indices_list(country=param['country'])
         except:
             pass
 
@@ -1598,7 +1598,7 @@ def test_indices_errors():
 
     for param in params:
         try:
-            investpy.get_indices_dict(country=param['country'],
+            pynvesting.get_indices_dict(country=param['country'],
                                       columns=param['columns'],
                                       as_json=param['as_json'])
         except:
@@ -1700,7 +1700,7 @@ def test_indices_errors():
 
     for param in params:
         try:
-            investpy.get_index_recent_data(index=param['index'],
+            pynvesting.get_index_recent_data(index=param['index'],
                                            country=param['country'],
                                            as_json=param['as_json'],
                                            order=param['order'],
@@ -1866,7 +1866,7 @@ def test_indices_errors():
 
     for param in params:
         try:
-            investpy.get_index_historical_data(index=param['index'],
+            pynvesting.get_index_historical_data(index=param['index'],
                                                country=param['country'],
                                                from_date=param['from_date'],
                                                to_date=param['to_date'],
@@ -1916,7 +1916,7 @@ def test_indices_errors():
 
     for param in params:
         try:
-            investpy.get_index_information(index=param['index'], country=param['country'], as_json=param['as_json'])
+            pynvesting.get_index_information(index=param['index'], country=param['country'], as_json=param['as_json'])
         except:
             pass
 
@@ -1955,7 +1955,7 @@ def test_indices_errors():
 
     for param in params:
         try:
-            investpy.get_indices_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
+            pynvesting.get_indices_overview(country=param['country'], as_json=param['as_json'], n_results=param['n_results'])
         except:
             pass
 
@@ -1988,7 +1988,7 @@ def test_indices_errors():
 
     for param in params:
         try:
-            investpy.search_indices(by=param['by'], value=param['value'])
+            pynvesting.search_indices(by=param['by'], value=param['value'])
         except:
             pass
 
@@ -2027,13 +2027,13 @@ def test_currency_crosses_errors():
 
     for param in params:
         try:
-            investpy.get_currency_crosses(base=param['base'],
+            pynvesting.get_currency_crosses(base=param['base'],
                                           second=param['second'])
         except:
             pass
 
         try:
-            investpy.get_currency_crosses_list(base=param['base'],
+            pynvesting.get_currency_crosses_list(base=param['base'],
                                                second=param['second'])
         except:
             pass
@@ -2097,7 +2097,7 @@ def test_currency_crosses_errors():
 
     for param in params:
         try:
-            investpy.get_currency_crosses_dict(base=param['base'],
+            pynvesting.get_currency_crosses_dict(base=param['base'],
                                                second=param['second'],
                                                columns=param['columns'],
                                                as_json=param['as_json'])
@@ -2163,7 +2163,7 @@ def test_currency_crosses_errors():
 
     for param in params:
         try:
-            investpy.get_currency_cross_recent_data(currency_cross=param['currency_cross'],
+            pynvesting.get_currency_cross_recent_data(currency_cross=param['currency_cross'],
                                                     as_json=param['as_json'],
                                                     order=param['order'],
                                                     interval=param['interval'])
@@ -2271,7 +2271,7 @@ def test_currency_crosses_errors():
 
     for param in params:
         try:
-            investpy.get_currency_cross_historical_data(currency_cross=param['currency_cross'],
+            pynvesting.get_currency_cross_historical_data(currency_cross=param['currency_cross'],
                                                         from_date=param['from_date'],
                                                         to_date=param['to_date'],
                                                         as_json=param['as_json'],
@@ -2315,7 +2315,7 @@ def test_currency_crosses_errors():
     
     for param in params:
         try:
-            investpy.get_currency_crosses_overview(currency=param['currency'], as_json=param['as_json'], n_results=param['n_results'])
+            pynvesting.get_currency_crosses_overview(currency=param['currency'], as_json=param['as_json'], n_results=param['n_results'])
         except:
             pass
 
@@ -2340,7 +2340,7 @@ def test_currency_crosses_errors():
 
     for param in params:
         try:
-            investpy.get_currency_cross_information(currency_cross=param['currency_cross'], as_json=param['as_json'])
+            pynvesting.get_currency_cross_information(currency_cross=param['currency_cross'], as_json=param['as_json'])
         except:
             pass
 
@@ -2373,7 +2373,7 @@ def test_currency_crosses_errors():
 
     for param in params:
         try:
-            investpy.search_currency_crosses(by=param['by'], value=param['value'])
+            pynvesting.search_currency_crosses(by=param['by'], value=param['value'])
         except:
             pass
 
@@ -2394,12 +2394,12 @@ def test_bonds_errors():
 
     for param in params:
         try:
-            investpy.get_bonds(country=param['country'])
+            pynvesting.get_bonds(country=param['country'])
         except:
             pass
 
         try:
-            investpy.get_bonds_list(country=param['country'])
+            pynvesting.get_bonds_list(country=param['country'])
         except:
             pass
 
@@ -2428,7 +2428,7 @@ def test_bonds_errors():
 
     for param in params:
         try:
-            investpy.get_bonds_dict(country=param['country'],
+            pynvesting.get_bonds_dict(country=param['country'],
                                     columns=param['columns'],
                                     as_json=param['as_json'])
         except:
@@ -2487,7 +2487,7 @@ def test_bonds_errors():
 
     for param in params:
         try:
-            investpy.get_bond_recent_data(bond=param['bond'],
+            pynvesting.get_bond_recent_data(bond=param['bond'],
                                           as_json=param['as_json'],
                                           order=param['order'],
                                           interval=param['interval'])
@@ -2611,7 +2611,7 @@ def test_bonds_errors():
 
     for param in params:
         try:
-            investpy.get_bond_historical_data(bond=param['bond'],
+            pynvesting.get_bond_historical_data(bond=param['bond'],
                                               from_date=param['from_date'],
                                               to_date=param['to_date'],
                                               as_json=param['as_json'],
@@ -2641,7 +2641,7 @@ def test_bonds_errors():
 
     for param in params:
         try:
-            investpy.get_bond_information(bond=param['bond'], as_json=param['as_json'])
+            pynvesting.get_bond_information(bond=param['bond'], as_json=param['as_json'])
         except:
             pass
     
@@ -2666,7 +2666,7 @@ def test_bonds_errors():
 
     for param in params:
         try:
-            investpy.get_bonds_overview(country=param['country'], as_json=param['as_json'])
+            pynvesting.get_bonds_overview(country=param['country'], as_json=param['as_json'])
         except:
             pass
 
@@ -2699,7 +2699,7 @@ def test_bonds_errors():
 
     for param in params:
         try:
-            investpy.search_bonds(by=param['by'], value=param['value'])
+            pynvesting.search_bonds(by=param['by'], value=param['value'])
         except:
             pass
 
@@ -2720,12 +2720,12 @@ def test_commodities_errors():
 
     for param in params:
         try:
-            investpy.get_commodities(group=param['group'])
+            pynvesting.get_commodities(group=param['group'])
         except:
             pass
 
         try:
-            investpy.get_commodities_list(group=param['group'])
+            pynvesting.get_commodities_list(group=param['group'])
         except:
             pass
 
@@ -2759,7 +2759,7 @@ def test_commodities_errors():
 
     for param in params:
         try:
-            investpy.get_commodities_dict(group=param['group'],
+            pynvesting.get_commodities_dict(group=param['group'],
                                           columns=param['columns'],
                                           as_json=param['as_json'])
         except:
@@ -2840,7 +2840,7 @@ def test_commodities_errors():
 
     for param in params:
         try:
-            investpy.get_commodity_recent_data(commodity=param['commodity'],
+            pynvesting.get_commodity_recent_data(commodity=param['commodity'],
                                                country=param['country'],
                                                as_json=param['as_json'],
                                                order=param['order'],
@@ -2997,7 +2997,7 @@ def test_commodities_errors():
 
     for param in params:
         try:
-            investpy.get_commodity_historical_data(commodity=param['commodity'],
+            pynvesting.get_commodity_historical_data(commodity=param['commodity'],
                                                    from_date=param['from_date'],
                                                    to_date=param['to_date'],
                                                    country=param['country'],
@@ -3042,7 +3042,7 @@ def test_commodities_errors():
 
     for param in params:
         try:
-            investpy.get_commodity_information(commodity=param['commodity'], country=param['country'], as_json=param['as_json'])
+            pynvesting.get_commodity_information(commodity=param['commodity'], country=param['country'], as_json=param['as_json'])
         except:
             pass
     
@@ -3081,7 +3081,7 @@ def test_commodities_errors():
 
     for param in params:
         try:
-            investpy.get_commodities_overview(group=param['group'], as_json=param['as_json'], n_results=param['n_results'])
+            pynvesting.get_commodities_overview(group=param['group'], as_json=param['as_json'], n_results=param['n_results'])
         except:
             pass
 
@@ -3114,7 +3114,7 @@ def test_commodities_errors():
 
     for param in params:
         try:
-            investpy.search_commodities(by=param['by'], value=param['value'])
+            pynvesting.search_commodities(by=param['by'], value=param['value'])
         except:
             pass
 
@@ -3141,7 +3141,7 @@ def test_crypto_errors():
 
     for param in params:
         try:
-            investpy.get_cryptos_dict(columns=param['columns'],
+            pynvesting.get_cryptos_dict(columns=param['columns'],
                                       as_json=param['as_json'])
         except:
             pass
@@ -3205,7 +3205,7 @@ def test_crypto_errors():
 
     for param in params:
         try:
-            investpy.get_crypto_recent_data(crypto=param['crypto'],
+            pynvesting.get_crypto_recent_data(crypto=param['crypto'],
                                             as_json=param['as_json'],
                                             order=param['order'],
                                             interval=param['interval'])
@@ -3313,7 +3313,7 @@ def test_crypto_errors():
 
     for param in params:
         try:
-            investpy.get_crypto_historical_data(crypto=param['crypto'],
+            pynvesting.get_crypto_historical_data(crypto=param['crypto'],
                                                 from_date=param['from_date'],
                                                 to_date=param['to_date'],
                                                 as_json=param['as_json'],
@@ -3347,7 +3347,7 @@ def test_crypto_errors():
 
     for param in params:
         try:
-            investpy.get_crypto_information(crypto=param['crypto'], as_json=param['as_json'])
+            pynvesting.get_crypto_information(crypto=param['crypto'], as_json=param['as_json'])
         except:
             pass
     
@@ -3368,7 +3368,7 @@ def test_crypto_errors():
 
     for param in params:
         try:
-            investpy.get_cryptos_overview(as_json=param['as_json'], n_results=param['n_results'])
+            pynvesting.get_cryptos_overview(as_json=param['as_json'], n_results=param['n_results'])
         except:
             pass
 
@@ -3401,7 +3401,7 @@ def test_crypto_errors():
 
     for param in params:
         try:
-            investpy.search_cryptos(by=param['by'], value=param['value'])
+            pynvesting.search_cryptos(by=param['by'], value=param['value'])
         except:
             pass
 
@@ -3422,7 +3422,7 @@ def test_certificate_errors():
 
     for param in params:
         try:
-            investpy.get_certificates(country=param['country'])
+            pynvesting.get_certificates(country=param['country'])
         except:
             pass
 
@@ -3437,7 +3437,7 @@ def test_certificate_errors():
 
     for param in params:
         try:
-            investpy.get_certificates_list(country=param['country'])
+            pynvesting.get_certificates_list(country=param['country'])
         except:
             pass
 
@@ -3471,7 +3471,7 @@ def test_certificate_errors():
 
     for param in params:
         try:
-            investpy.get_certificates_dict(country=param['country'],
+            pynvesting.get_certificates_dict(country=param['country'],
                                            columns=param['columns'],
                                            as_json=param['as_json'])
         except:
@@ -3559,7 +3559,7 @@ def test_certificate_errors():
 
     for param in params:
         try:
-            investpy.get_certificate_recent_data(certificate=param['certificate'],
+            pynvesting.get_certificate_recent_data(certificate=param['certificate'],
                                                  country=param['country'],
                                                  as_json=param['as_json'],
                                                  order=param['order'],
@@ -3707,7 +3707,7 @@ def test_certificate_errors():
 
     for param in params:
         try:
-            investpy.get_certificate_historical_data(certificate=param['certificate'],
+            pynvesting.get_certificate_historical_data(certificate=param['certificate'],
                                                      country=param['country'],
                                                      from_date=param['from_date'],
                                                      to_date=param['to_date'],
@@ -3757,7 +3757,7 @@ def test_certificate_errors():
 
     for param in params:
         try:
-            investpy.get_certificate_information(certificate=param['certificate'],
+            pynvesting.get_certificate_information(certificate=param['certificate'],
                                                  country=param['country'],
                                                  as_json=param['as_json'])
         except:
@@ -3798,7 +3798,7 @@ def test_certificate_errors():
 
     for param in params:
         try:
-            investpy.get_certificates_overview(country=param['country'],
+            pynvesting.get_certificates_overview(country=param['country'],
                                                as_json=param['as_json'],
                                                n_results=param['n_results'])
         except:
@@ -3833,7 +3833,7 @@ def test_certificate_errors():
 
     for param in params:
         try:
-            investpy.search_certificates(by=param['by'], value=param['value'])
+            pynvesting.search_certificates(by=param['by'], value=param['value'])
         except:
             pass
 
@@ -3908,7 +3908,7 @@ def test_search_errors():
 
     for param in params:
         try:
-            results = investpy.search_quotes(text=param['text'],
+            results = pynvesting.search_quotes(text=param['text'],
                                              countries=param['countries'],
                                              products=param['products'],
                                              n_results=param['n_results'])
@@ -4073,7 +4073,7 @@ def test_news_errors():
 
     for param in params:
         try:
-            investpy.economic_calendar(time_zone=param['time_zone'],
+            pynvesting.economic_calendar(time_zone=param['time_zone'],
                                   time_filter=param['time_filter'],
                                   countries=param['countries'],
                                   importances=param['importances'],
@@ -4166,7 +4166,7 @@ def test_technical_errors():
 
     for param in params:
         try:
-            investpy.technical_indicators(name=param['name'],
+            pynvesting.technical_indicators(name=param['name'],
                                           country=param['country'],
                                           product_type=param['product_type'],
                                           interval=param['interval'])
@@ -4174,7 +4174,7 @@ def test_technical_errors():
             pass
 
         try:
-            investpy.moving_averages(name=param['name'],
+            pynvesting.moving_averages(name=param['name'],
                                      country=param['country'],
                                      product_type=param['product_type'],
                                      interval=param['interval'])
@@ -4182,7 +4182,7 @@ def test_technical_errors():
             pass
 
         try:
-            investpy.pivot_points(name=param['name'],
+            pynvesting.pivot_points(name=param['name'],
                                   country=param['country'],
                                   product_type=param['product_type'],
                                   interval=param['interval'])
