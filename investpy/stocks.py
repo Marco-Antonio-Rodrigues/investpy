@@ -8,7 +8,7 @@ from random import randint
 import pandas as pd
 import pkg_resources
 import pytz
-import requests
+import cloudscraper
 from lxml.html import fromstring
 from unidecode import unidecode
 
@@ -22,6 +22,7 @@ from .utils import constant as cst
 from .utils.data import Data
 from .utils.extra import random_user_agent
 
+scraper = cloudscraper.create_scraper()
 
 def get_stocks(country=None):
     """
@@ -327,7 +328,7 @@ def get_stock_recent_data(
 
     url = "https://www.investing.com/instruments/HistoricalDataAjax"
 
-    req = requests.post(url, headers=head, data=params)
+    req = scraper.post(url, headers=head, data=params)
 
     if req.status_code != 200:
         raise ConnectionError(
@@ -658,7 +659,7 @@ def get_stock_historical_data(
 
         url = "https://www.investing.com/instruments/HistoricalDataAjax"
 
-        req = requests.post(url, headers=head, data=params)
+        req = scraper.post(url, headers=head, data=params)
 
         if req.status_code != 200:
             raise ConnectionError(
@@ -891,7 +892,7 @@ def get_stock_company_profile(stock, country="spain", language="english"):
             "Connection": "keep-alive",
         }
 
-        req = requests.get(url, headers=head)
+        req = scraper.get(url, headers=head)
 
         if req.status_code != 200:
             raise ConnectionError(
@@ -933,7 +934,7 @@ def get_stock_company_profile(stock, country="spain", language="english"):
             "Connection": "keep-alive",
         }
 
-        req = requests.get(url, headers=head)
+        req = scraper.get(url, headers=head)
 
         if req.status_code != 200:
             raise ConnectionError(
@@ -1036,7 +1037,7 @@ def get_stock_dividends(stock, country):
 
     url = "https://www.investing.com/equities/" + str(tag_) + "-dividends"
 
-    req = requests.get(url=url, headers=headers)
+    req = scraper.get(url=url, headers=headers)
 
     if req.status_code != 200:
         raise ConnectionError(
@@ -1125,7 +1126,7 @@ def get_stock_dividends(stock, country):
 
                 url = "https://www.investing.com/equities/MoreDividendsHistory"
 
-                req = requests.post(url=url, headers=headers, params=params)
+                req = scraper.post(url=url, headers=headers, params=params)
 
                 if req.status_code != 200:
                     raise ConnectionError(
@@ -1320,7 +1321,7 @@ def get_stock_information(stock, country, as_json=False):
         "Connection": "keep-alive",
     }
 
-    req = requests.get(url, headers=headers)
+    req = scraper.get(url, headers=headers)
 
     if req.status_code != 200:
         raise ConnectionError(
@@ -1489,7 +1490,7 @@ def get_stocks_overview(country, as_json=False, n_results=100):
 
     url = "https://www.investing.com/equities/StocksFilter"
 
-    req = requests.get(url, params=params, headers=head)
+    req = scraper.get(url, params=params, headers=head)
 
     if req.status_code != 200:
         raise ConnectionError(
@@ -1715,7 +1716,7 @@ def get_stock_financial_summary(
 
     url = "https://www.investing.com/instruments/Financials/changesummaryreporttypeajax"
 
-    req = requests.get(url, params=params, headers=headers)
+    req = scraper.get(url, params=params, headers=headers)
 
     if req.status_code != 200:
         raise ConnectionError(

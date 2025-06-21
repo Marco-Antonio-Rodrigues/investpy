@@ -9,7 +9,7 @@ from random import randint
 import pandas as pd
 import pkg_resources
 import pytz
-import requests
+import cloudscraper
 from lxml.html import fromstring
 from unidecode import unidecode
 
@@ -22,6 +22,7 @@ from .data.certificates_data import (
 from .utils.data import Data
 from .utils.extra import random_user_agent
 
+scraper = cloudscraper.create_scraper()
 
 def get_certificates(country=None):
     """
@@ -335,7 +336,7 @@ def get_certificate_recent_data(
 
     url = "https://www.investing.com/instruments/HistoricalDataAjax"
 
-    req = requests.post(url, headers=head, data=params)
+    req = scraper.post(url, headers=head, data=params)
 
     if req.status_code != 200:
         raise ConnectionError(
@@ -666,7 +667,7 @@ def get_certificate_historical_data(
 
         url = "https://www.investing.com/instruments/HistoricalDataAjax"
 
-        req = requests.post(url, headers=head, data=params)
+        req = scraper.post(url, headers=head, data=params)
 
         if req.status_code != 200:
             raise ConnectionError(
@@ -874,7 +875,7 @@ def get_certificate_information(certificate, country, as_json=False):
         "Connection": "keep-alive",
     }
 
-    req = requests.get(url, headers=head)
+    req = scraper.get(url, headers=head)
 
     if req.status_code != 200:
         raise ConnectionError(
@@ -1050,7 +1051,7 @@ def get_certificates_overview(country, as_json=False, n_results=100):
         + "-certificates"
     )
 
-    req = requests.get(url, headers=head)
+    req = scraper.get(url, headers=head)
 
     if req.status_code != 200:
         raise ConnectionError(

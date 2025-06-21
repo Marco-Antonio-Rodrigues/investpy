@@ -9,7 +9,7 @@ from random import randint, sample
 import pandas as pd
 import pkg_resources
 import pytz
-import requests
+import cloudscraper
 from lxml.html import fromstring
 from unidecode import unidecode
 
@@ -23,6 +23,7 @@ from .utils import constant as cst
 from .utils.data import Data
 from .utils.extra import random_user_agent
 
+scraper = cloudscraper.create_scraper()
 
 def get_currency_crosses(base=None, second=None):
     """
@@ -355,7 +356,7 @@ def get_currency_cross_recent_data(
 
     url = "https://www.investing.com/instruments/HistoricalDataAjax"
 
-    req = requests.post(url, headers=head, data=params)
+    req = scraper.post(url, headers=head, data=params)
 
     if req.status_code != 200:
         raise ConnectionError(
@@ -668,7 +669,7 @@ def get_currency_cross_historical_data(
 
         url = "https://www.investing.com/instruments/HistoricalDataAjax"
 
-        req = requests.post(url, headers=head, data=params)
+        req = scraper.post(url, headers=head, data=params)
 
         if req.status_code != 200:
             raise ConnectionError(
@@ -864,7 +865,7 @@ def get_currency_cross_information(currency_cross, as_json=False):
         "Connection": "keep-alive",
     }
 
-    req = requests.get(url, headers=head)
+    req = scraper.get(url, headers=head)
 
     if req.status_code != 200:
         raise ConnectionError(
@@ -1015,7 +1016,7 @@ def get_currency_crosses_overview(currency, as_json=False, n_results=100):
 
     url = "https://www.investing.com/currencies/Service/ChangeCurrency"
 
-    req = requests.get(url, headers=head, params=params)
+    req = scraper.get(url, headers=head, params=params)
 
     if req.status_code != 200:
         raise ConnectionError(
