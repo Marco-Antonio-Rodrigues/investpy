@@ -1,9 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/alvarobartt/investpy/master/docs/source/_static/logo.png" hspace="20">
-</p>
-
-## :warning: `investpy` is not working fine currently due to some Investing.com changes in their APIs, so please use [`investiny`](https://github.com/alvarobartt/investiny) in the meantime as I'm actively updating it and adding more and more features of some temporary solutions while we fix `investpy`. Thanks!
-
 <h2 align="center">Financial Data Extraction from Investing.com with Python</h2>
 
 investpy is a Python package to retrieve data from [Investing.com](https://www.investing.com/), which provides data retrieval 
@@ -23,10 +17,6 @@ investpy to be one of the most consistent packages when it comes to financial da
 [![Package Status](https://img.shields.io/pypi/status/investpy.svg)](https://pypi.org/project/investpy/)
 [![Build Status](https://github.com/alvarobartt/investpy/workflows/run_tests/badge.svg)](https://github.com/alvarobartt/investpy/actions?query=workflow%3Arun_tests)
 [![Documentation Status](https://readthedocs.org/projects/investpy/badge/?version=latest)](https://investpy.readthedocs.io/)
-
-**If you want to support the project, you can buy the developer a coffee. More information at: [buy-me-a-coffee](https://github.com/alvarobartt/buy-me-a-coffee)**
-
-<p align="center"><a href="https://www.buymeacoffee.com/alvarobartt" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a></p>
 
 ---
 
@@ -181,37 +171,6 @@ discussions.
 
 ---
 
-## :card_index_dividers: Related projects
-
-Since investpy is intended to retrieve data from different financial products as indexed in Investing.com, 
-the **development of some support modules which implement an additional functionality based on investpy data**, 
-is presented. Note that **anyone can contribute to this section** by creating any package, module, or utility that 
-uses investpy. So on, the ones already created are going to be presented, since they are intended to be used 
-combined with investpy:
-
-- [pyrtfolio](https://github.com/alvarobartt/pyrtfolio/): is a Python package to generate stock portfolios.
-- [trendet](https://github.com/alvarobartt/trendet/): is a Python package for trend detection on stock time-series data.
-- [pypme](https://github.com/ymyke/pypme): is a Python package for PME (Public Market Equivalent) calculation
-
-If you developed an interesting/useful project based on investpy data, please open an issue to let me know to 
-include it in this section.
-
----
-
-## :memo: Citation
-
-When citing this repository on your scientific publications please use the following **BibTeX** citation:
-
-```bibtex
-@misc{investpy,
-    author = {Alvaro Bartolome del Canto},
-    title = {investpy - Financial Data Extraction from Investing.com with Python},
-    year = {2018-2021},
-    publisher = {GitHub},
-    journal = {GitHub Repository},
-    howpublished = {\url{https://github.com/alvarobartt/investpy}},
-}
-```
 
 When citing this repository on any other social media, please use the following citation:
 
@@ -224,18 +183,6 @@ included in the package short description title.
 
 ---
 
-## :man_technologist: Contact Information
-
-You can contact me at any of my social network profiles:
-
-- :briefcase: LinkedIn: https://linkedin.com/in/alvarobartt
-- :bird: Twitter: https://twitter.com/alvarobartt
-- :octocat: GitHub: https://github.com/alvarobartt
-
-Or via email at alvarobartt@yahoo.com.
-
----
-
 ## :warning: Disclaimer
 
 This Python package has been made for **research purposes** to fit the needs that Investing.com does not cover, 
@@ -244,3 +191,9 @@ so this package works like an Application Programming Interface (API) of Investi
 Conclude that **investpy is not affiliated in any way to Investing.com or any dependant company**, the only 
 requirement specified by Investing.com to develop this package was to "mention the source where data is 
 retrieved from".
+
+## Sobre
+
+Este projeto é uma versão modificada do [investing.com scraper original](https://github.com/alvarobartt/investpy) criado por Alvaro Bartolome.
+
+Distribuído sob a Licença MIT. Veja o arquivo LICENSE para mais informações.
