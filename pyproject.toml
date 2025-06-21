@@ -1,12 +1,14 @@
 [project]
 name = "pynvesting"
 version = "0.1.0"
-description = ""
+description = "Scraper de dados do site Investing.com"
 authors = [
     {name = "Marco Antonio Rodrigues Gomes de Souza",email = "94053824+Marco-Antonio-Rodrigues@users.noreply.github.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
 dependencies = [
     "pandas (>=2.3.0,<3.0.0)",
     "lxml (>=5.4.0,<6.0.0)",
@@ -15,6 +17,10 @@ dependencies = [
     "cloudscraper (>=1.2.71,<2.0.0)",
 ]
 
+[project.urls]
+Homepage = "https://github.com/Marco-Antonio-Rodrigues/pynvesting"
+documentation = "https://github.com/Marco-Antonio-Rodrigues/pynvesting"
+repository = "https://github.com/Marco-Antonio-Rodrigues/pynvesting"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
